@@ -1,0 +1,27 @@
+{
+    "owo:rich_translations": 1,
+    "misc.wonder.magic": {
+        "text": "Magic", "color": "#5629FF"
+    },
+    "item.minecraft.echo_shard": [
+        "Echo ", // (1)
+        { "text": "Shard", "color": "#0096FF" } // (2)
+    ],
+    "item.minecraft.recovery_compass": [
+        "", // (1)
+        { "text": "Recovery Compass", "color": "yellow" }, // (2)
+        " made of ",
+        { "translate": "item.minecraft.echo_shard" }
+    ],
+    "item.wonder.crystallized_magic":[
+        "Crystallized ",
+        { "translate": "misc.wonder.magic" }
+    ],
+    "item.wonder.wand":[
+        { "translate": "misc.wonder.magic" },
+        " Wand"
+    ],
+    "itemGroup.wonder.items": "Wonder Items",
+    "itemGroup.wonder.items.button.modrinth": "Wonder on Modrinth",
+    "itemGroup.wonder.items.button.curseforge": "Wonder on Curseforge"
+}

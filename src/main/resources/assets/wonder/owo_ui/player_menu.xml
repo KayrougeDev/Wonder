@@ -1,0 +1,83 @@
+<owo-ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/wisp-forest/owo-lib/1.20/owo-ui.xsd">
+    <components>
+        <flow-layout direction="horizontal">
+            <children>
+                <label>
+                    <text>Player's menu</text>
+                    <shadow>true</shadow>
+                    <positioning type="relative">50,5</positioning>
+                </label>
+
+                <flow-layout direction="horizontal" id="box-container">
+                    <children>
+                        <flow-layout direction="vertical" id="player-display">
+                            <children>
+                            </children>
+                            <surface>
+                                <panel />
+                            </surface>
+                            <margins><all>15</all></margins>
+                            <sizing>
+                                <horizontal method="fill">25</horizontal>
+                                <vertical method="fill">80</vertical>
+                            </sizing>
+
+                            <vertical-alignment>top</vertical-alignment>
+                            <horizontal-alignment>center</horizontal-alignment>
+
+                            <padding><top>5</top></padding>
+
+                        </flow-layout>
+
+                        <flow-layout direction="vertical">
+                            <children>
+                                <label id="player-data">
+                                    <text>Some data</text>
+                                    <shadow>true</shadow>
+                                    <color>gold</color>
+                                </label>
+
+                                <button id="inspector-toggle">
+                                    <text>Toggle inspector</text>
+                                    <tooltip-text>Tooltiup=af</tooltip-text>
+                                </button>
+
+
+                            </children>
+                            <surface>
+                                <panel />
+                            </surface>
+
+                            <margins><all>15</all></margins>
+                            <padding><top>5</top></padding>
+
+                            <vertical-alignment>top</vertical-alignment>
+                            <horizontal-alignment>center</horizontal-alignment>
+
+                            <sizing>
+                                <horizontal method="fill">45</horizontal>
+                                <vertical method="fill">80</vertical>
+                            </sizing>
+                        </flow-layout>
+
+                    </children>
+                    <vertical-alignment>center</vertical-alignment>
+                    <horizontal-alignment>center</horizontal-alignment>
+
+                    <surface>
+                        <panel dark="true"/>
+                    </surface>
+                </flow-layout>
+
+            </children>
+
+            <vertical-alignment>center</vertical-alignment>
+            <horizontal-alignment>center</horizontal-alignment>
+
+            <surface>
+                <vanilla-translucent />
+            </surface>
+        </flow-layout>
+    </components>
+</owo-ui>
