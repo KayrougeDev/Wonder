@@ -1,16 +1,13 @@
 package fr.kayrouge.wonder.client.screen;
 
-import com.mojang.math.Axis;
 import fr.kayrouge.wonder.Wonder;
+import io.wispforest.owo.ui.base.BaseOwoContainerScreen;
 import io.wispforest.owo.ui.base.BaseUIModelScreen;
 import io.wispforest.owo.ui.component.ButtonComponent;
 import io.wispforest.owo.ui.component.EntityComponent;
 import io.wispforest.owo.ui.component.LabelComponent;
 import io.wispforest.owo.ui.component.UIComponents;
 import io.wispforest.owo.ui.container.FlowLayout;
-import io.wispforest.owo.ui.core.Color;
-import io.wispforest.owo.ui.core.Insets;
-import io.wispforest.owo.ui.core.Positioning;
 import io.wispforest.owo.ui.core.Sizing;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;

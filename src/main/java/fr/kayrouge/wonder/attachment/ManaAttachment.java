@@ -8,6 +8,7 @@ import net.fabricmc.fabric.api.attachment.v1.AttachmentTarget;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.resources.Identifier;
+import net.minecraft.world.item.ItemStack;
 
 public class ManaAttachment {
 
@@ -23,12 +24,23 @@ public class ManaAttachment {
     );
 
     public static final AttachmentType<Float> MANA_MAX= AttachmentRegistry.create(
-            Identifier.fromNamespaceAndPath(Wonder.MOD_ID, "mana_attachment"),
+            Identifier.fromNamespaceAndPath(Wonder.MOD_ID, "mana_max_attachment"),
             builder -> builder
                     .initializer(() -> 0f)
                     .persistent(Codec.FLOAT)
                     .syncWith(
                             ByteBufCodecs.FLOAT,
+                            AttachmentSyncPredicate.targetOnly()
+                    )
+    );
+
+    public static final AttachmentType<ItemStack> ITEM = AttachmentRegistry.create(
+            Identifier.fromNamespaceAndPath(Wonder.MOD_ID, "mana_item_attachment"),
+            builder -> builder
+                    .initializer(() -> ItemStack.EMPTY)
+                    .persistent(ItemStack.CODEC)
+                    .syncWith(
+                            ItemStack.STREAM_CODEC,
                             AttachmentSyncPredicate.targetOnly()
                     )
     );
@@ -58,6 +70,14 @@ public class ManaAttachment {
 
         public void setMaxMana(float value) {
             target.setAttached(MANA_MAX, value);
+        }
+
+        public ItemStack getItem() {
+            return target.getAttached(ITEM);
+        }
+
+        public void setItem(ItemStack stack) {
+            target.modifyAttached(ITEM, itemStack -> stack);
         }
 
     }
