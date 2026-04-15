@@ -23,6 +23,9 @@
 		],
 		"fabric-datagen": [
 			"fr.kayrouge.wonder.datagen.WonderDataGenerator"
+		],
+		"cardinal-components": [
+			"fr.kayrouge.wonder.component.WonderComponents"
 		]
 	},
 	"mixins": [
@@ -33,5 +36,10 @@
 		"minecraft": "~26.1.2",
 		"java": ">=25",
 		"fabric-api": "*"
+	},
+	"custom": {
+		"cardinal-components": [
+			"wonder:player"
+		]
 	}
 }

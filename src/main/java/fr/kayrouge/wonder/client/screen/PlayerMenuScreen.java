@@ -1,15 +1,15 @@
 package fr.kayrouge.wonder.client.screen;
 
 import fr.kayrouge.wonder.Wonder;
-import io.wispforest.owo.ui.base.BaseOwoContainerScreen;
+import fr.kayrouge.wonder.component.PlayerComponent;
+import fr.kayrouge.wonder.component.WonderComponents;
+import fr.kayrouge.wonder.network.serverbound.ServerboundOpenPlayerMenuPacket;
 import io.wispforest.owo.ui.base.BaseUIModelScreen;
-import io.wispforest.owo.ui.component.ButtonComponent;
-import io.wispforest.owo.ui.component.EntityComponent;
-import io.wispforest.owo.ui.component.LabelComponent;
-import io.wispforest.owo.ui.component.UIComponents;
+import io.wispforest.owo.ui.component.*;
 import io.wispforest.owo.ui.container.FlowLayout;
+import io.wispforest.owo.ui.container.GridLayout;
+import io.wispforest.owo.ui.core.Positioning;
 import io.wispforest.owo.ui.core.Sizing;
-import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 
 public class PlayerMenuScreen extends BaseUIModelScreen<FlowLayout> {
@@ -20,29 +20,28 @@ public class PlayerMenuScreen extends BaseUIModelScreen<FlowLayout> {
 
     @Override
     protected void build(FlowLayout rootComponent) {
-        EntityComponent<EntityComponent.RenderablePlayerEntity> playerComponent = UIComponents.entity(Sizing.fill(), EntityComponent.createRenderablePlayer(Minecraft.getInstance().getGameProfile()));
+//        EntityComponent<EntityComponent.RenderablePlayerEntity> playerComponent = UIComponents.entity(Sizing.fill(), EntityComponent.createRenderablePlayer(this.minecraft.getGameProfile()));
+//
+//        playerComponent.scale(0.4f);
+//        playerComponent.sizing(Sizing.fill(150), Sizing.fill(90));
+//        playerComponent.transform(matrix -> {
+//            matrix.translate(0,-0.75f,0);
+//        });
+//        playerComponent.lookAtCursor(true);
 
-        playerComponent.scale(0.4f);
-        playerComponent.sizing(Sizing.fill(150), Sizing.fill(90));
-        playerComponent.transform(matrix -> {
-            matrix.translate(0,-0.75f,0);
-        });
-        playerComponent.lookAtCursor(true);
 
-        rootComponent.childById(FlowLayout.class, "player-display").child(playerComponent);
+        ButtonComponent openMagicInventory = UIComponents.button(Component.empty(), buttonComponent ->
+                    Wonder.CHANNEL.clientHandle().send(new ServerboundOpenPlayerMenuPacket()
+                ));
+        openMagicInventory.positioning(Positioning.relative(5,75)).sizing(Sizing.fixed(20));
+        openMagicInventory.tooltip(Component.translatable("text.wonder.magic_inventory_open"));
 
-        Component playerName = playerComponent.entity().getDisplayName().plainCopy();
-        LabelComponent playerNameComponent = UIComponents.label(playerName).shadow(true);
-        rootComponent.childById(FlowLayout.class, "player-display").child(playerNameComponent);
+        rootComponent.child(openMagicInventory);
 
-        rootComponent.childById(ButtonComponent.class, "inspector-toggle").onPress(buttonComponent -> {
-            this.uiAdapter.toggleInspector();
-        });
     }
 
     @Override
     public boolean isPauseScreen() {
-
         return false;
     }
 }

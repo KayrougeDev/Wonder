@@ -1,4 +1,4 @@
-package fr.kayrouge.wonder.client.screen.container;
+package fr.kayrouge.wonder.menu;
 
 import io.wispforest.owo.registration.reflect.AutoRegistryContainer;
 import net.minecraft.core.Registry;
@@ -9,7 +9,7 @@ import net.minecraft.world.inventory.MenuType;
 public class WonderMenuTypes implements AutoRegistryContainer<MenuType<?>> {
 
 
-    public static final MenuType<TestContainerMenu> TEST = new MenuType<>(TestContainerMenu::new, FeatureFlagSet.of());
+    public static final MenuType<MagicInventoryMenu> MAGIC_INVENTORY = new MenuType<>(MagicInventoryMenu::new, FeatureFlagSet.of());
 
 
     @Override

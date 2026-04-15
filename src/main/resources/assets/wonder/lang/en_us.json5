@@ -23,5 +23,11 @@
     ],
     "itemGroup.wonder.items": "Wonder Items",
     "itemGroup.wonder.items.button.modrinth": "Wonder on Modrinth",
-    "itemGroup.wonder.items.button.curseforge": "Wonder on Curseforge"
+    "itemGroup.wonder.items.button.curseforge": "Wonder on Curseforge",
+    "text.wonder.magic_inventory_open": [
+        "Open ",
+        { "translate": "misc.wonder.magic" },
+        " Item Menu"
+    ],
+    "container.playermenu.runes": "Runes"
 }

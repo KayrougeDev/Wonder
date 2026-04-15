@@ -14,6 +14,8 @@ public class WonderItems implements AutoRegistryContainer<Item> {
 
     public static final Item WAND = new WandItem(new Item.Properties().setId(id("wand")));
 
+    public static final Item RUNE = new RuneItem(new Item.Properties().setId(id("rune")));
+
     @Override
     public Registry<Item> getRegistry() {
         return BuiltInRegistries.ITEM;

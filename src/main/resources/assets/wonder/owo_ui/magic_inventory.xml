@@ -11,10 +11,14 @@
 
                 <flow-layout direction="horizontal" id="box-container">
                     <children>
-                        <flow-layout direction="vertical" id="rune-container">
+                        <flow-layout direction="vertical" id="runes-container">
                             <children>
-                                <grid-layout rows="1" columns="5" id="equipped-run-grid">
-                                    <children></children>
+                                <label>
+                                    <text translate="true">container.playermenu.runes</text>
+                                </label>
+                                <grid-layout rows="1" columns="5" id="equipped-runes-grid">
+                                    <children>
+                                    </children>
                                     <surface>
                                         <panel dark="false" />
                                     </surface>
@@ -22,6 +26,26 @@
                                         <horizontal method="fill">100</horizontal>
                                         <vertical method="fill">15</vertical>
                                     </sizing>
+                                    <vertical-alignment>center</vertical-alignment>
+                                    <horizontal-alignment>center</horizontal-alignment>
+                                    <margins><bottom>2</bottom></margins>
+                                </grid-layout>
+                                <label id="player-inventory-title">
+                                    <text translate="true">container.inventory</text>
+                                </label>
+                                <grid-layout rows="6" columns="6" id="player-inventory-grid">
+                                    <children>
+                                    </children>
+                                    <surface>
+                                        <panel dark="false" />
+                                    </surface>
+                                    <sizing>
+                                        <horizontal method="fill">100</horizontal>
+                                        <vertical method="fill">74</vertical>
+                                    </sizing>
+                                    <vertical-alignment>center</vertical-alignment>
+                                    <horizontal-alignment>center</horizontal-alignment>
+                                    <padding><top>3</top><left>1</left></padding>
                                 </grid-layout>
                             </children>
                             <margins>
@@ -29,11 +53,12 @@
                                 <right>5</right>
                             </margins>
                             <sizing>
-                                <horizontal method="fill">35</horizontal>
+                                <horizontal method="fill">30</horizontal>
                                 <vertical method="fill">80</vertical>
                             </sizing>
 
                             <padding><top>5</top></padding>
+                            <horizontal-alignment>center</horizontal-alignment>
 
                         </flow-layout>
 

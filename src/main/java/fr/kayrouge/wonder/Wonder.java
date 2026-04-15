@@ -1,9 +1,11 @@
 package fr.kayrouge.wonder;
 
-import fr.kayrouge.wonder.items.WonderComponents;
+import fr.kayrouge.wonder.menu.WonderMenuTypes;
 import fr.kayrouge.wonder.items.WonderItemGroups;
 import fr.kayrouge.wonder.items.WonderItems;
+import fr.kayrouge.wonder.network.WonderPackets;
 import fr.kayrouge.wonder.utils.configs.WonderConfig;
+import io.wispforest.owo.network.OwoNetChannel;
 import io.wispforest.owo.registration.reflect.FieldRegistrationHandler;
 import net.fabricmc.api.ModInitializer;
 
@@ -18,14 +20,19 @@ public class Wonder implements ModInitializer {
 
 	public static final WonderConfig CONFIG = WonderConfig.createAndLoad();
 
+	public static final OwoNetChannel CHANNEL = OwoNetChannel.create(id("main"));
 
 
 	@Override  
 	public void onInitialize() {
-		FieldRegistrationHandler.register(WonderComponents.class, MOD_ID, false);
 		FieldRegistrationHandler.register(WonderItems.class, MOD_ID, false);
+		FieldRegistrationHandler.register(WonderMenuTypes.class, MOD_ID, false);
 
 		WonderItemGroups.ITEMS.initialize();
+
+		WonderPackets.register();
+
+
 
 	}
 

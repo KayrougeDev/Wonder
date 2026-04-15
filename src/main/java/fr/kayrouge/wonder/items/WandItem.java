@@ -15,12 +15,4 @@ public class WandItem extends Item {
         super(properties.stacksTo(1));
     }
 
-
-    @Override
-    public @NonNull InteractionResult use(@NonNull Level level, @NonNull Player player, @NonNull InteractionHand hand) {
-        if(level.isClientSide()) {
-            Minecraft.getInstance().setScreen(new PlayerMenuScreen());
-        }
-        return super.use(level, player, hand);
-    }
 }

@@ -1,8 +1,10 @@
 package fr.kayrouge.wonder.datagen;
 
+import fr.kayrouge.wonder.datagen.providers.WonderItemTagsProvider;
 import fr.kayrouge.wonder.datagen.providers.lang.WonderEnglishLangProvider;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 
 public class WonderDataGenerator implements DataGeneratorEntrypoint {
 
@@ -10,7 +12,10 @@ public class WonderDataGenerator implements DataGeneratorEntrypoint {
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
+        pack.addProvider(WonderItemTagsProvider::new);
+
         // Translation
         pack.addProvider(WonderEnglishLangProvider::new);
+
     }
 }
