@@ -2,12 +2,8 @@ package fr.kayrouge.wonder.client.screen;
 
 import fr.kayrouge.wonder.Wonder;
 import fr.kayrouge.wonder.menu.MagicInventoryMenu;
-import io.wispforest.owo.braid.widgets.basic.LayoutBuilder;
-import io.wispforest.owo.braid.widgets.grid.Grid;
 import io.wispforest.owo.ui.base.BaseUIModelContainerScreen;
 import io.wispforest.owo.ui.base.BaseUIModelScreen;
-import io.wispforest.owo.ui.component.ButtonComponent;
-import io.wispforest.owo.ui.component.LabelComponent;
 import io.wispforest.owo.ui.component.TextureComponent;
 import io.wispforest.owo.ui.component.UIComponents;
 import io.wispforest.owo.ui.container.*;
@@ -15,11 +11,7 @@ import io.wispforest.owo.ui.core.*;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
-import net.minecraft.world.Containers;
 import net.minecraft.world.entity.player.Inventory;
-
-import java.util.List;
-import java.util.stream.Stream;
 
 public class MagicInventoryScreen extends BaseUIModelContainerScreen<FlowLayout, MagicInventoryMenu> {
 
@@ -47,6 +39,8 @@ public class MagicInventoryScreen extends BaseUIModelContainerScreen<FlowLayout,
             stack.child(s);
 
             equippedRuneGrid.child(stack, 0, i);
+
+
         }
 
         // TODO replace with a smaller area with a scroll container and only shows in inventory runes

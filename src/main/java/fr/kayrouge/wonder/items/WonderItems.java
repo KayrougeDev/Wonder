@@ -1,6 +1,7 @@
 package fr.kayrouge.wonder.items;
 
 import fr.kayrouge.wonder.Wonder;
+import fr.kayrouge.wonder.items.runes.RuneItem;
 import io.wispforest.owo.registration.reflect.AutoRegistryContainer;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
